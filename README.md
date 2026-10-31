@@ -47,7 +47,11 @@ cd docs && python3 -m http.server 8000
 
 **GitHub Pages:** in the repository, open Settings, then Pages. Under "Build and deployment", choose "Deploy from a branch", branch `main`, folder `/docs`. The site will be served at `https://learnwithadilbaig.github.io/workdesk-website/`.
 
-**Netlify, Vercel or Cloudflare Pages:** set the publish directory to `docs` and leave the build command empty (or use `python3 src/build.py`).
+**Vercel:** `vercel.json` already tells Vercel to run `python3 src/build.py` and serve `docs/`. Import the repo with the framework preset set to "Other" and leave the other settings blank.
+
+**Hostinger:** connect the `deploy` branch with Hostinger's Git deployment. A GitHub Action rebuilds that branch from `main` on every push, and `.htaccess` handles HTTPS, the 404 page and caching.
+
+**Netlify or Cloudflare Pages:** set the publish directory to `docs` and the build command to `python3 src/build.py`.
 
 **Custom domain:** change `site_url` in `src/config.json` to the real domain (for example `https://www.yourdomain.pk`), rebuild, and commit. Canonical URLs, the sitemap and social tags all use this value.
 
