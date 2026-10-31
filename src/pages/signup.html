@@ -1,0 +1,22 @@
+<!--
+title: Sign up | WorkDesk
+description: Create a WorkDesk account and explore HR, attendance, payroll and task management with sample data.
+h1: Create your WorkDesk account
+noindex: yes
+-->
+<section class="auth band">
+  <div class="wrap" style="display:grid;place-items:center">
+    <form class="form-card" data-form data-endpoint="{{cfg:form_endpoint}}" data-ok="Thanks. Check your email to finish setting up your account." novalidate>
+      <input type="hidden" name="form" value="signup">
+      <svg class="logo-svg" viewBox="0 0 812.13 178.951" role="img" aria-label="WorkDesk"><use class="b" href="#wd-back"/><use class="f" href="#wd-front"/><use class="w" href="#wd-word"/></svg>
+      <h1 style="font-size:1.8rem">Create your account</h1>
+      <p class="muted small">Explore WorkDesk with sample data. No card needed.</p>
+      <div class="field"><label for="s-name">Your name</label><input id="s-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="s-email">Work email</label><input id="s-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="s-company">Company</label><input id="s-company" name="company" autocomplete="organization" required></div>
+      <button class="btn btn-primary" type="submit">Create account</button>
+      <p class="form-note" role="status" aria-live="polite"></p>
+      <p class="small muted">By signing up you agree to our <a class="text-link" href="terms.html">terms</a> and <a class="text-link" href="privacy.html">privacy policy</a>. Already have an account? <a class="text-link" href="{{login}}">Log in</a>.</p>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+<!--
+title: Book a Demo | WorkDesk HR & Payroll Software
+description: See WorkDesk with your own leave policy, shifts and payroll rules. Book a 30-minute demo of our HR and payroll software and get a written quote.
+h1: See WorkDesk with your own policies
+nav:
+crumbs: Book a demo
+type: ContactPage
+-->
+<section class="page-hero">
+  <div class="wrap grid" style="align-items:start">
+    <div class="copy">
+      <div class="eyebrow">Book a demo</div>
+      <h1>See WorkDesk with your own policies</h1>
+      <p class="lede">Tell us a little about your team. We'll set up a demo using your shifts, leave types and payroll rules, so you see how WorkDesk would run your month, not a made-up one.</p>
+      <ul class="checks">
+        <li>{{tick}}<div><b>About 30 minutes</b><span>On a video call, at a time that suits you.</span></div></li>
+        <li>{{tick}}<div><b>Your questions first</b><span>Bring the payroll or attendance problem that annoys you most.</span></div></li>
+        <li>{{tick}}<div><b>A written quote</b><span>Based on the modules and team size you choose.</span></div></li>
+        <li>{{tick}}<div><b>No pressure</b><span>If WorkDesk isn't the right fit, we'll tell you.</span></div></li>
+      </ul>
+    </div>
+    <form class="form-card" data-form data-endpoint="{{cfg:form_endpoint}}" data-ok="Thanks. We'll email you within one working day to pick a time." novalidate>
+      <input type="hidden" name="form" value="demo">
+      <div class="fields">
+        <div class="field"><label for="d-name">Your name</label><input id="d-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="d-email">Work email</label><input id="d-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="d-company">Company</label><input id="d-company" name="company" autocomplete="organization" required></div>
+        <div class="field"><label for="d-phone">Phone or WhatsApp</label><input id="d-phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="d-size">Team size</label>
+          <select id="d-size" name="team_size"><option>1 to 25</option><option selected>26 to 100</option><option>101 to 250</option><option>251 to 1,000</option><option>More than 1,000</option></select></div>
+        <div class="field"><label for="d-city">City</label><input id="d-city" name="city" autocomplete="address-level2"></div>
+        <div class="field full"><label for="d-modules">What do you want to fix first?</label>
+          <select id="d-modules" name="interest"><option>Attendance and leave</option><option selected>Payroll and fines</option><option>Tasks and projects</option><option>Performance scorecards</option><option>Everything, honestly</option></select></div>
+        <div class="field full"><label for="d-msg">Anything else we should know?</label><textarea id="d-msg" name="message" placeholder="For example: 3 branches, rotating shifts, we use a biometric machine"></textarea></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Request my demo {{icon:arrow}}</button>
+      <p class="form-note" role="status" aria-live="polite"></p>
+      <p class="small muted">We use your details only to arrange the demo. See our <a class="text-link" href="privacy.html">privacy policy</a>.</p>
+    </form>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head center"><div class="eyebrow">What happens next</div><h2>From form to first payroll</h2></div>
+    <div class="steps" data-reveal>
+      <div class="progress-line" aria-hidden="true"><i></i></div>
+      <div class="step"><h3>We call you</h3><p>A short chat about your team and what isn't working today.</p></div>
+      <div class="step"><h3>Your demo</h3><p>WorkDesk set up with your policies, plus a written quote.</p></div>
+      <div class="step"><h3>Go live</h3><p>We import your data and run the first payroll alongside you.</p></div>
+    </div>
+  </div>
+</section>

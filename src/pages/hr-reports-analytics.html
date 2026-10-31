@@ -1,0 +1,97 @@
+<!--
+title: HR Reports & Analytics Dashboards | WorkDesk
+description: Headcount, attendance, payroll cost and performance reports with live dashboards and one-click Excel and PDF exports. HR reports and analytics by WorkDesk.
+h1: HR reports without the Sunday-night spreadsheet
+nav: products
+crumbs: Features=features.html; Reports
+-->
+<section class="page-hero">
+  <div class="wrap grid">
+    <div class="copy">
+      <div class="eyebrow">HR reports &amp; analytics</div>
+      <h1>HR reports without the Sunday-night spreadsheet</h1>
+      <p class="lede">Because attendance, leave, payroll and performance already live in WorkDesk, the reports are already built. Open a dashboard, filter by team or month, and export it for the people who asked.</p>
+      <div class="cta-row"><a class="btn btn-primary" href="demo.html">Book a demo {{icon:arrow}}</a><a class="btn btn-ghost" href="features.html">All features</a></div>
+    </div>
+    <div class="mock" role="group" aria-label="Attendance report with sample data">
+      <div class="mock-h"><b>Attendance rate</b>
+        <div class="seg" aria-label="Choose a team"><button type="button" class="on" data-team="all">All teams</button><button type="button" data-team="sales">Sales</button><button type="button" data-team="ops">Operations</button></div></div>
+      <div><div class="chart" id="chart"></div>
+        <div class="months" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div></div>
+      <div class="legend"><div><small>Average</small><b id="avg">94%</b></div><div><small>Best month</small><b id="best">Nov</b></div><div><small>Late check-ins</small><b id="late">38</b></div></div>
+      <div class="row"><span class="sample">Sample data</span><button class="btn btn-ghost btn-sm" type="button" data-export>{{icon:download}} Export to Excel</button></div>
+      <div class="toast hide" id="export-toast" role="status" aria-live="polite">{{tick}}<span>Report exported</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Ready-made reports</div><h2>The reports people ask HR for</h2>
+      <p class="lede">These are ready the day you go live. Each one filters by branch, department and date range.</p></div>
+    <div class="grid-3" data-reveal>
+      <div class="card"><span class="ico">{{icon:people}}</span><h3>Headcount and turnover</h3><p>Joiners, leavers and headcount by department, with turnover rate by month.</p></div>
+      <div class="card"><span class="ico">{{icon:clock}}</span><h3>Attendance and punctuality</h3><p>Attendance rate, late arrivals, absences and overtime by person and team.</p></div>
+      <div class="card"><span class="ico">{{icon:calendar}}</span><h3>Leave</h3><p>Leave taken and remaining by type, and who's away in the coming weeks.</p></div>
+      <div class="card"><span class="ico">{{icon:wallet}}</span><h3>Payroll cost</h3><p>Gross pay, deductions, fines and overtime by department, month over month.</p></div>
+      <div class="card"><span class="ico">{{icon:star}}</span><h3>Performance</h3><p>Scorecard results by team, and the goals most often missed.</p></div>
+      <div class="card"><span class="ico">{{icon:task}}</span><h3>Tasks and projects</h3><p>Overdue work, completion rates and project progress.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Dashboards</div>
+      <h2>The numbers owners check every morning</h2>
+      <p class="lede">Pin the figures you care about to your dashboard. Headcount, today's attendance, pending approvals and this month's payroll estimate, all on the first screen you see.</p>
+      <ul class="checks">
+        <li>{{tick}}<div><b>Live, not monthly</b><span>Figures update as check-ins and approvals happen.</span></div></li>
+        <li>{{tick}}<div><b>Drill down</b><span>Click a number to see the people and records behind it.</span></div></li>
+        <li>{{tick}}<div><b>Excel and PDF</b><span>Export any report, or schedule it to arrive by email each month.</span></div></li>
+      </ul>
+    </div>
+    <div class="mock" role="group" aria-label="Owner dashboard with sample data">
+      <div class="mock-h"><b>Today</b><span class="sample">Sample data</span></div>
+      <div class="kpis">
+        <div class="kpi"><small>Headcount</small><b>248</b></div>
+        <div class="kpi"><small>In today</small><b>231</b></div>
+        <div class="kpi"><small>Pending</small><b>7</b></div>
+      </div>
+      <div class="panel" data-grow>
+        <div class="panel-h">Payroll estimate by department <span>March</span></div>
+        <div style="padding:12px 14px" class="lb">
+          <div class="lb-row" style="grid-template-columns:92px minmax(0,1fr) 54px"><span class="small">Sales</span><div class="bar"><i style="width:82%"></i></div><b class="small">4.1M</b></div>
+          <div class="lb-row" style="grid-template-columns:92px minmax(0,1fr) 54px"><span class="small">Operations</span><div class="bar"><i style="width:100%"></i></div><b class="small">5.0M</b></div>
+          <div class="lb-row" style="grid-template-columns:92px minmax(0,1fr) 54px"><span class="small">Finance</span><div class="bar"><i style="width:38%"></i></div><b class="small">1.9M</b></div>
+          <div class="lb-row" style="grid-template-columns:92px minmax(0,1fr) 54px"><span class="small">Support</span><div class="bar"><i style="width:46%"></i></div><b class="small">2.3M</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Where the data comes from</div><h2>Reports are only as good as the records</h2></div>
+    <div class="grid-3" data-reveal>
+      <a class="card spot" href="attendance-leave-management.html"><span class="ico">{{icon:clock}}</span><h3>Attendance &amp; Leave</h3><p>Every check-in and leave day, recorded once.</p><span class="text-link more">Attendance management {{icon:arrow}}</span></a>
+      <a class="card spot" href="payroll-software.html"><span class="ico">{{icon:wallet}}</span><h3>Payroll</h3><p>Pay, deductions and fines from each run.</p><span class="text-link more">Payroll software {{icon:arrow}}</span></a>
+      <a class="card spot" href="performance-scorecards.html"><span class="ico">{{icon:star}}</span><h3>Scorecards</h3><p>Review results and goal progress.</p><span class="text-link more">Performance scorecards {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head center"><div class="eyebrow">Reports FAQ</div><h2>Reporting questions</h2></div>
+    <div class="faq">
+      <details><summary>Can we build our own reports?</summary><div><p>Yes. Start from a ready-made report, choose the columns and filters you need, and save it for next month.</p></div></details>
+      <details><summary>Which formats can we export?</summary><div><p>Excel and PDF. Excel keeps the raw numbers for your finance team; PDF is ready to share with management.</p></div></details>
+      <details><summary>Can managers see reports for their own team only?</summary><div><p>Yes. Reports follow the same role-based access as the rest of WorkDesk, so managers see their team and owners see everything.</p></div></details>
+    </div>
+  </div>
+</section>
+
+{{include:cta}}

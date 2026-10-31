@@ -1,0 +1,72 @@
+<!--
+title: Pricing: Pay Per Employee | WorkDesk HR Software
+description: WorkDesk pricing is per active employee per month, for the modules you choose. Pick your modules and team size and we'll send you a written quote.
+h1: Pay for the people and modules you use
+nav: pricing
+crumbs: Pricing
+-->
+<section class="page-hero simple">
+  <div class="wrap grid">
+    <div class="copy">
+      <div class="eyebrow">Pricing</div>
+      <h1>Pay for the people and modules you use</h1>
+      <p class="lede">WorkDesk is priced per active employee per month, for the modules you switch on. No set-up fee for standard onboarding, and no paying for seats nobody uses. Build your plan below and we'll send you a written quote.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap builder" id="builder">
+    <div class="card">
+      <h2 style="font-size:1.5rem">1. Choose your modules</h2>
+      <div class="mod-pick">
+        <div><input type="checkbox" id="m-people" data-name="People" checked><label for="m-people"><span class="box">{{icon:check}}</span>People</label></div>
+        <div><input type="checkbox" id="m-att" data-name="Attendance &amp; Leave" checked><label for="m-att"><span class="box">{{icon:check}}</span>Attendance &amp; Leave</label></div>
+        <div><input type="checkbox" id="m-pay" data-name="Payroll &amp; Fines" checked><label for="m-pay"><span class="box">{{icon:check}}</span>Payroll &amp; Fines</label></div>
+        <div><input type="checkbox" id="m-task" data-name="Tasks &amp; Projects"><label for="m-task"><span class="box">{{icon:check}}</span>Tasks &amp; Projects</label></div>
+        <div><input type="checkbox" id="m-score" data-name="Scorecards"><label for="m-score"><span class="box">{{icon:check}}</span>Scorecards</label></div>
+        <div><input type="checkbox" id="m-rep" data-name="Reports"><label for="m-rep"><span class="box">{{icon:check}}</span>Reports</label></div>
+      </div>
+      <div class="range">
+        <label for="team-size"><b>2. How many employees?</b></label>
+        <output id="team-out" for="team-size">50</output>
+        <input type="range" id="team-size" min="5" max="1000" step="5" value="50">
+      </div>
+    </div>
+    <div class="card summary">
+      {{tick}}
+      <h2 style="font-size:1.5rem">Your plan</h2>
+      <p id="sum-text" aria-live="polite">People, Attendance &amp; Leave and Payroll &amp; Fines for 50 employees.</p>
+      <a class="btn btn-primary" href="demo.html">Get my quote {{icon:arrow}}</a>
+      <p class="small">You'll pick the same options on the next page. We reply with a written quote and can walk you through a demo on the same call.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Every plan includes</div><h2>No surprise add-ons</h2></div>
+    <div class="grid-3" data-reveal>
+      <div class="card"><span class="ico">{{icon:phone}}</span><h3>Web and mobile apps</h3><p>For every employee, at no extra cost per device.</p></div>
+      <div class="card"><span class="ico">{{icon:chat}}</span><h3>Onboarding and data import</h3><p>We import your employee and salary data and set up your policies with you.</p></div>
+      <div class="card"><span class="ico">{{icon:people}}</span><h3>Support from real people</h3><p>Talk to someone who knows HR and payroll, not a ticket bot.</p></div>
+      <div class="card"><span class="ico">{{icon:lock}}</span><h3>Roles and permissions</h3><p>Fine-grained access for owners, HR, managers and staff.</p></div>
+      <div class="card"><span class="ico">{{icon:sliders}}</span><h3>Change anytime</h3><p>Add or remove employees and modules from one month to the next.</p></div>
+      <div class="card"><span class="ico">{{icon:download}}</span><h3>Your data, exportable</h3><p>Export your records whenever you want. It's your data.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head center"><div class="eyebrow">Pricing FAQ</div><h2>Questions about pricing</h2></div>
+    <div class="faq">
+      <details><summary>What counts as an active employee?</summary><div><p>Anyone on your payroll or attendance during the month. People who left before the month started aren't counted.</p></div></details>
+      <details><summary>Is there a free trial?</summary><div><p>You can sign up and explore WorkDesk with sample data, or book a demo and we'll set up a trial with your own policies.</p></div></details>
+      <details><summary>Can we start small and add modules later?</summary><div><p>Yes. Many teams start with attendance and payroll, then add tasks and scorecards once those are running smoothly.</p></div></details>
+      <details><summary>Do you offer annual billing?</summary><div><p>Ask us when you request your quote. We'll show monthly and annual options side by side.</p></div></details>
+    </div>
+  </div>
+</section>
+
+{{include:cta}}

@@ -1,0 +1,34 @@
+<!--
+title: Contact WorkDesk | Sales & Support
+description: Questions about WorkDesk HR and payroll software? Contact our team for sales, support or partnerships. We reply on working days.
+h1: Talk to the WorkDesk team
+nav:
+crumbs: Contact
+type: ContactPage
+-->
+<section class="page-hero">
+  <div class="wrap grid" style="align-items:start">
+    <div class="copy">
+      <div class="eyebrow">Contact</div>
+      <h1>Talk to the WorkDesk team</h1>
+      <p class="lede">Questions about features, pricing or moving from spreadsheets? Send us a message and a real person will reply on the next working day.</p>
+      <div class="grid-2" style="margin-top:8px">
+        <a class="card spot" href="demo.html"><span class="ico">{{icon:monitor}}</span><h3>See a demo</h3><p>The quickest way to see if WorkDesk fits.</p></a>
+        <a class="card spot" href="help.html"><span class="ico">{{icon:chat}}</span><h3>Already a customer?</h3><p>The help centre answers most set-up questions.</p></a>
+      </div>
+      <p class="foot-contact">{{icon:mail}} <span>{{cfg:contact_email}}</span></p>
+    </div>
+    <form class="form-card" data-form data-endpoint="{{cfg:form_endpoint}}" data-ok="Message sent. We'll reply on the next working day." novalidate>
+      <input type="hidden" name="form" value="contact">
+      <div class="fields">
+        <div class="field"><label for="c-name">Your name</label><input id="c-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="c-topic">Topic</label>
+          <select id="c-topic" name="topic"><option>Sales and pricing</option><option>Support for an existing account</option><option>Partnerships</option><option>Press</option><option>Something else</option></select></div>
+        <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="message" required></textarea></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Send message {{icon:arrow}}</button>
+      <p class="form-note" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

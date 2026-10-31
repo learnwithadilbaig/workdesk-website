@@ -1,0 +1,25 @@
+# WorkDesk
+
+> WorkDesk is HR, payroll and work management software for growing teams in Pakistan: employee records, attendance and shifts, leave, payroll with deductions and fines, tasks and projects, performance scorecards and reports.
+
+## Product
+- [Everything HR and operations need, on one desk](https://learnwithadilbaig.github.io/workdesk-website/features.html): Every WorkDesk feature in one place: employee records, attendance and leave, payroll with fines, tasks and projects, performance scorecards and HR reports.
+- [Every employee, one complete record](https://learnwithadilbaig.github.io/workdesk-website/people-management.html): Keep every employee record in one place: contracts, CNIC and documents, salary history, reporting lines and access by role. Employee management software by WorkDesk.
+- [Attendance and leave, without the WhatsApp threads](https://learnwithadilbaig.github.io/workdesk-website/attendance-leave-management.html): Track check-ins, shifts and late arrivals, and approve leave in one tap. WorkDesk's attendance and leave management system keeps balances right automatically.
+- [Payroll software that adds itself up](https://learnwithadilbaig.github.io/workdesk-website/payroll-software.html): Run payroll from real attendance. WorkDesk works out salaries, overtime, deductions and fines, then sends digital payslips. Payroll software for Pakistan.
+- [Hand out work. Watch it get done.](https://learnwithadilbaig.github.io/workdesk-website/task-project-management.html): Assign tasks, set deadlines and follow projects across teams in the same system as your HR and payroll. Task and project management software from WorkDesk.
+- [Appraisals people can actually understand](https://learnwithadilbaig.github.io/workdesk-website/performance-scorecards.html): Set KPIs for every role, run review cycles and see team scorecards at a glance. WorkDesk's performance management makes appraisals fair and easy to explain.
+- [HR reports without the Sunday-night spreadsheet](https://learnwithadilbaig.github.io/workdesk-website/hr-reports-analytics.html): Headcount, attendance, payroll cost and performance reports with live dashboards and one-click Excel and PDF exports. HR reports and analytics by WorkDesk.
+- [One system, three very different jobs](https://learnwithadilbaig.github.io/workdesk-website/solutions.html): How WorkDesk helps HR teams run payroll and policies, managers approve and assign work, and business owners see the numbers. HR software for SMEs in Pakistan.
+- [Pay for the people and modules you use](https://learnwithadilbaig.github.io/workdesk-website/pricing.html): WorkDesk pricing is per active employee per month, for the modules you choose. Pick your modules and team size and we'll send you a written quote.
+
+## Guides
+- [How to choose HR and payroll software in Pakistan](https://learnwithadilbaig.github.io/workdesk-website/blog-how-to-choose-hr-software-pakistan.html): A practical checklist for choosing HR and payroll software in Pakistan: what to test in a demo, local payroll needs, pricing models and the red flags to avoid.
+- [Late arrival fines: how to write a policy people accept](https://learnwithadilbaig.github.io/workdesk-website/blog-late-arrival-fine-policy.html): How to write a late-arrival and fines policy employees accept: grace periods, thresholds, caps, appeals, what Pakistani wage law expects, and a sample policy.
+- [Moving HR from Excel to software, step by step](https://learnwithadilbaig.github.io/workdesk-website/blog-move-hr-from-excel-to-software.html): How to move HR and payroll from Excel to HR software without breaking payroll: clean your data, write down policies, run a parallel month and switch over.
+
+## Company
+- [We build software for the people who keep companies running](https://learnwithadilbaig.github.io/workdesk-website/about.html): WorkDesk builds HR, payroll and work management software for growing businesses in Pakistan. What we believe, how we work and why the logo is two ticks.
+- [How we look after your people's data](https://learnwithadilbaig.github.io/workdesk-website/security.html): How WorkDesk protects salary and personal data: role-based access, encrypted connections, activity history, backups and your right to export your data.
+- [Frequently asked questions](https://learnwithadilbaig.github.io/workdesk-website/faq.html): Answers about WorkDesk HR and payroll software: modules, payroll with fines and deductions, attendance, mobile app, data security, pricing and getting started.
+- [Talk to the WorkDesk team](https://learnwithadilbaig.github.io/workdesk-website/contact.html): Questions about WorkDesk HR and payroll software? Contact our team for sales, support or partnerships. We reply on working days.

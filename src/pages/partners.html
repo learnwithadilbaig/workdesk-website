@@ -1,0 +1,55 @@
+<!--
+title: Partner Program | WorkDesk
+description: HR consultants, accounting firms and software resellers can partner with WorkDesk to help companies in Pakistan move HR and payroll off spreadsheets.
+h1: Help more companies get their HR done
+nav: about
+crumbs: About=about.html; Partners
+-->
+<section class="page-hero simple">
+  <div class="wrap grid">
+    <div class="copy">
+      <div class="eyebrow">Partners</div>
+      <h1>Help more companies get their HR done</h1>
+      <p class="lede">HR consultants, accounting firms and IT resellers already advise the businesses that need WorkDesk most. If you're one of them, let's work together to get your clients off spreadsheets and onto a system that runs itself.</p>
+      <div class="cta-row"><a class="btn btn-primary" href="#partner-form">Become a partner {{icon:arrow}}</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Who we partner with</div><h2>Three ways to work with us</h2></div>
+    <div class="grid-3" data-reveal>
+      <div class="card"><span class="ico">{{icon:people}}</span><h3>HR consultants</h3><p>Write your clients' policies, then see them applied automatically in WorkDesk. Less policing for you, better results for them.</p></div>
+      <div class="card"><span class="ico">{{icon:wallet}}</span><h3>Accounting and payroll firms</h3><p>Run payroll for several clients from clean, approved attendance data instead of spreadsheets emailed at the last minute.</p></div>
+      <div class="card"><span class="ico">{{icon:monitor}}</span><h3>Software resellers</h3><p>Add WorkDesk to what you already sell to businesses, and help them set it up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <div class="eyebrow">What partners get</div>
+      <h2>Support to make your clients succeed</h2>
+      <ul class="checks">
+        <li>{{tick}}<div><b>Training</b><span>Learn WorkDesk well enough to set it up for clients yourself.</span></div></li>
+        <li>{{tick}}<div><b>A direct line to our team</b><span>Get answers fast when a client has a question.</span></div></li>
+        <li>{{tick}}<div><b>Demo accounts</b><span>Show prospects WorkDesk with realistic sample data.</span></div></li>
+        <li>{{tick}}<div><b>Commercial terms</b><span>We'll agree terms that suit how you work with clients.</span></div></li>
+      </ul>
+    </div>
+    <form class="form-card" id="partner-form" data-form data-endpoint="{{cfg:form_endpoint}}" data-ok="Thanks. Our partnerships team will be in touch." novalidate>
+      <input type="hidden" name="form" value="partner">
+      <div class="fields">
+        <div class="field"><label for="p-name">Your name</label><input id="p-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="p-email">Work email</label><input id="p-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="p-firm">Company</label><input id="p-firm" name="company" autocomplete="organization" required></div>
+        <div class="field"><label for="p-type">Type of firm</label><select id="p-type" name="type"><option>HR consultancy</option><option>Accounting or payroll firm</option><option>Software reseller</option><option>Other</option></select></div>
+        <div class="field full"><label for="p-msg">How do you work with clients today?</label><textarea id="p-msg" name="message"></textarea></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Apply to partner {{icon:arrow}}</button>
+      <p class="form-note" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

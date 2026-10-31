@@ -1,0 +1,45 @@
+<!--
+title: Careers at WorkDesk
+description: Help build HR and payroll software used by growing businesses across Pakistan. See how the WorkDesk team works and send us your CV or portfolio.
+h1: Build the software HR teams open every morning
+nav: about
+crumbs: About=about.html; Careers
+-->
+<section class="page-hero simple">
+  <div class="wrap grid">
+    <div class="copy">
+      <div class="eyebrow">Careers</div>
+      <h1>Build the software HR teams open every morning</h1>
+      <p class="lede">WorkDesk runs attendance, leave and payroll for real companies, which means real people get paid on time because of what we build. If that sounds like satisfying work, we'd like to hear from you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">How we work</div><h2>What it's like here</h2></div>
+    <div class="grid-3" data-reveal>
+      <div class="card"><span class="ico">{{icon:people}}</span><h3>Close to customers</h3><p>Everyone, engineers included, joins customer calls. You'll know who uses what you build.</p></div>
+      <div class="card"><span class="ico">{{icon:check}}</span><h3>Small team, real ownership</h3><p>You'll own features from the first sketch to the day they ship and beyond.</p></div>
+      <div class="card"><span class="ico">{{icon:book}}</span><h3>Room to learn</h3><p>Payroll rules, labour law, product design and engineering. There's always something new.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <div class="head"><div class="eyebrow">Open roles</div><h2>No listed openings right now</h2>
+      <p class="lede">We don't have specific roles advertised at the moment, but we always read applications from people who care about good software and good HR. Tell us what you'd like to work on.</p></div>
+    <form class="form-card" data-form data-endpoint="{{cfg:form_endpoint}}" data-ok="Thanks. We read every application and will reply if there's a fit." novalidate>
+      <input type="hidden" name="form" value="careers">
+      <div class="fields">
+        <div class="field"><label for="k-name">Your name</label><input id="k-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="k-email">Email</label><input id="k-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field full"><label for="k-link">LinkedIn or portfolio link</label><input id="k-link" name="link" type="url" placeholder="https://"></div>
+        <div class="field full"><label for="k-msg">What would you like to work on?</label><textarea id="k-msg" name="message" required></textarea></div>
+      </div>
+      <button class="btn btn-primary" type="submit">Send application {{icon:arrow}}</button>
+      <p class="form-note" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>

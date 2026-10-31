@@ -1,0 +1,19 @@
+<!--
+title: Log in | WorkDesk
+description: Log in to your WorkDesk account to manage employees, attendance, leave, payroll and tasks.
+h1: Log in to WorkDesk
+noindex: yes
+-->
+<section class="auth band">
+  <div class="wrap" style="display:grid;place-items:center">
+    <form class="form-card" data-form data-endpoint="" data-unset="Log-in isn't connected yet. Set app_login_url in src/config.json so the Log in links go straight to the WorkDesk app." novalidate>
+      <svg class="logo-svg" viewBox="0 0 812.13 178.951" role="img" aria-label="WorkDesk"><use class="b" href="#wd-back"/><use class="f" href="#wd-front"/><use class="w" href="#wd-word"/></svg>
+      <h1 style="font-size:1.8rem">Log in</h1>
+      <div class="field"><label for="l-email">Work email or phone</label><input id="l-email" name="email" autocomplete="username" required></div>
+      <div class="field"><label for="l-pass">Password</label><input id="l-pass" name="password" type="password" autocomplete="current-password" required></div>
+      <button class="btn btn-primary" type="submit">Log in</button>
+      <p class="form-note" role="status" aria-live="polite"></p>
+      <p class="small muted">New to WorkDesk? <a class="text-link" href="{{signup}}">Create an account</a> or <a class="text-link" href="demo.html">book a demo</a>.</p>
+    </form>
+  </div>
+</section>

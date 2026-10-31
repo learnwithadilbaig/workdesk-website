@@ -1,0 +1,110 @@
+<!--
+title: Employee Management Software | WorkDesk
+description: Keep every employee record in one place: contracts, CNIC and documents, salary history, reporting lines and access by role. Employee management software by WorkDesk.
+h1: Every employee, one complete record
+nav: products
+crumbs: Features=features.html; People
+-->
+<section class="page-hero">
+  <div class="wrap grid">
+    <div class="copy">
+      <div class="eyebrow">People</div>
+      <h1>Every employee, one complete record</h1>
+      <p class="lede">WorkDesk's employee management software replaces the shared drive, the paper files and the master spreadsheet. Each person gets one profile with their job, salary history, documents and manager, and every other module reads from it.</p>
+      <div class="cta-row"><a class="btn btn-primary" href="demo.html">Book a demo {{icon:arrow}}</a><a class="btn btn-ghost" href="features.html">All features</a></div>
+    </div>
+    <div class="mock" role="group" aria-label="Employee profile with sample data">
+      <div class="prof-top"><div class="av" style="background:#6B5BD6">AK</div><div><b>Ayesha Khan</b><span class="muted small">Senior Accountant, Finance</span></div><span class="pill ok" style="margin-left:auto">Active</span></div>
+      <div class="tabs" role="tablist" aria-label="Profile sections">
+        <button type="button" role="tab" id="t-ov" aria-controls="p-ov" aria-selected="true">Overview</button>
+        <button type="button" role="tab" id="t-doc" aria-controls="p-doc" aria-selected="false" tabindex="-1">Documents</button>
+        <button type="button" role="tab" id="t-sal" aria-controls="p-sal" aria-selected="false" tabindex="-1">Salary</button>
+      </div>
+      <div id="p-ov" role="tabpanel" aria-labelledby="t-ov" class="kv">
+        <div><small>Employee ID</small>WD-0142</div><div><small>Joined</small>14 August 2022</div>
+        <div><small>Reports to</small>Imran Siddiqui</div><div><small>Branch</small>Lahore head office</div>
+        <div><small>Shift</small>Morning, 09:00 to 17:30</div><div><small>Leave balance</small>11 days annual</div>
+      </div>
+      <div id="p-doc" role="tabpanel" aria-labelledby="t-doc" hidden>
+        <div class="doc-row"><span>{{icon:file}} Employment contract</span><span class="pill ok">Signed</span></div>
+        <div class="doc-row"><span>{{icon:file}} CNIC copy</span><span class="pill ok">Verified</span></div>
+        <div class="doc-row"><span>{{icon:file}} Degree certificate</span><span class="pill ok">Verified</span></div>
+        <div class="doc-row"><span>{{icon:file}} Probation review</span><span class="pill pending">Due 30 Sep</span></div>
+      </div>
+      <div id="p-sal" role="tabpanel" aria-labelledby="t-sal" hidden>
+        <div class="doc-row"><span>July 2025, annual increment</span><b>PKR 118,000</b></div>
+        <div class="doc-row"><span>February 2024, promotion</span><b>PKR 104,000</b></div>
+        <div class="doc-row"><span>August 2022, joined</span><b>PKR 85,000</b></div>
+      </div>
+      <div class="sample">Sample data. Click the tabs.</div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Employee records</div><h2>Stop hunting for the latest version</h2>
+      <p class="lede">When records live in five places, nobody trusts any of them. With WorkDesk there's one profile per person and a history of every change.</p></div>
+    <div class="grid-3" data-reveal>
+      <div class="card"><span class="ico">{{icon:people}}</span><h3>Complete profiles</h3><p>Personal details, CNIC, emergency contacts, bank account, job title, grade and joining date in one place.</p></div>
+      <div class="card"><span class="ico">{{icon:file}}</span><h3>Documents</h3><p>Contracts, CNIC copies, degrees and warning letters attached to the right person, with reminders when something expires.</p></div>
+      <div class="card"><span class="ico">{{icon:layers}}</span><h3>Departments and org chart</h3><p>Who reports to whom, by department and branch. The org chart redraws itself when someone moves.</p></div>
+      <div class="card"><span class="ico">{{icon:history}}</span><h3>Change history</h3><p>Promotions, transfers and salary changes are recorded with the date and the person who made them.</p></div>
+      <div class="card"><span class="ico">{{icon:user-check}}</span><h3>Joining and leaving</h3><p>Checklists for onboarding and exit, so laptops come back and final settlements aren't forgotten.</p></div>
+      <div class="card"><span class="ico">{{icon:lock}}</span><h3>Access by role</h3><p>HR sees everything, managers see their team, and employees see their own file. Salaries stay private.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Self-service</div>
+      <h2>Let people update their own details</h2>
+      <p class="lede">A new phone number or a changed bank account shouldn't need an email chain. Employees update their own details in the app, and HR approves the changes that matter.</p>
+      <ul class="checks">
+        <li>{{tick}}<div><b>Fewer HR requests</b><span>Staff download their own letters, payslips and documents.</span></div></li>
+        <li>{{tick}}<div><b>Approval where it counts</b><span>Bank details and legal names change only after HR signs off.</span></div></li>
+        <li>{{tick}}<div><b>Always current</b><span>Payroll and reports use the latest details automatically.</span></div></li>
+      </ul>
+    </div>
+    <div class="phone-stage">
+      <div class="phone" role="group" aria-label="Employee self-service in the mobile app, sample data">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="ph-top"><small>My profile</small><b>Ayesha Khan</b></div>
+          <div class="ph-list">
+            <div class="ph-card"><small>Phone</small><b>0300 1234567</b></div>
+            <div class="ph-card"><small>Bank account</small><div class="row"><b>Change requested</b><span class="pill pending">With HR</span></div></div>
+            <div class="ph-card ink-card"><div class="row"><b>Experience letter</b>{{tick}}</div><small>Ready to download</small></div>
+            <div class="ph-card"><small>Emergency contact</small><b>Sara Khan, sister</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Works with</div><h2>The record every module reads</h2></div>
+    <div class="grid-3" data-reveal>
+      <a class="card spot" href="payroll-software.html"><span class="ico">{{icon:wallet}}</span><h3>Payroll</h3><p>Salary, allowances and bank details for every run.</p><span class="text-link more">Payroll software {{icon:arrow}}</span></a>
+      <a class="card spot" href="attendance-leave-management.html"><span class="ico">{{icon:clock}}</span><h3>Attendance &amp; Leave</h3><p>Shift, branch and leave entitlements by person.</p><span class="text-link more">Attendance &amp; leave {{icon:arrow}}</span></a>
+      <a class="card spot" href="performance-scorecards.html"><span class="ico">{{icon:star}}</span><h3>Scorecards</h3><p>Goals and review history alongside the job record.</p><span class="text-link more">Performance scorecards {{icon:arrow}}</span></a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head center"><div class="eyebrow">People FAQ</div><h2>Employee records questions</h2></div>
+    <div class="faq">
+      <details><summary>Can we import our existing employee list?</summary><div><p>Yes. Upload your current spreadsheet and WorkDesk maps the columns to employee fields. We help with the first import so nothing is lost.</p></div></details>
+      <details><summary>Who can see salary information?</summary><div><p>Only roles you allow. By default HR and owners see salaries, managers see their own team's attendance and tasks, and employees see their own record.</p></div></details>
+      <details><summary>Can we keep records of former employees?</summary><div><p>Yes. When someone leaves, their profile is archived with its full history, so experience letters and audits are easy later.</p></div></details>
+    </div>
+  </div>
+</section>
+
+{{include:cta}}
