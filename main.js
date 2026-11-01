@@ -253,6 +253,33 @@
     builder.addEventListener('input', upd2); upd2();
   }
 
+  /* ---------- affiliate commission calculator ---------- */
+  var calc = $('#aff-calc');
+  if (calc) {
+    var amt = $('#aff-amount'), term = 'annual';
+    var parse = function () { return parseInt(amt.value.replace(/[^0-9]/g, ''), 10) || 0; };
+    var fmt = function (n) { return 'Rs ' + Math.round(n).toLocaleString('en-US'); };
+    var annual = function () { return term === 'annual'; };
+    var upd = function () {
+      $('#aff-out').textContent = fmt(parse() * 0.2);
+      $('#aff-term').textContent = annual() ? '12 months' : '1 month';
+      $('#aff-label').textContent = annual() ? 'What the customer pays for the year (Rs)' : 'What the customer pays per month (Rs)';
+      $('#aff-note').textContent = annual() ? "Paid once, on the customer's first annual payment."
+        : "Paid once, on the customer's first monthly payment. Renewals aren't included.";
+    };
+    amt.addEventListener('input', function () { var v = parse(); amt.value = v ? v.toLocaleString('en-US') : ''; upd(); });
+    $$('[data-term]', calc).forEach(function (b) {
+      b.addEventListener('click', function () {
+        term = b.getAttribute('data-term');
+        $$('[data-term]', calc).forEach(function (x) { x.setAttribute('aria-checked', String(x === b)); });
+        if (term === 'monthly' && parse() === 600000) amt.value = '50,000';
+        if (term === 'annual' && parse() === 50000) amt.value = '600,000';
+        upd();
+      });
+    });
+    upd();
+  }
+
   /* ---------- forms: post to the configured endpoint, or explain that none is set ---------- */
   $$('form[data-form]').forEach(function (f) {
     var note = $('.form-note', f);
@@ -260,8 +287,16 @@
       e.preventDefault();
       var bad = $$('[required]', f).filter(function (el) { return !el.value.trim(); });
       var email = $('input[type=email]', f);
-      if (bad.length) { note.className = 'form-note err'; note.textContent = 'Please fill in ' + bad.map(function (b) { return (f.querySelector('label[for="' + b.id + '"]') || {}).textContent || 'the required fields'; }).join(', ').toLowerCase() + '.'; bad[0].focus(); return; }
-      if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())) { note.className = 'form-note err'; note.textContent = 'That email address looks incomplete. Try name@company.com.'; email.focus(); return; }
+      $$('[aria-invalid]', f).forEach(function (el) { el.removeAttribute('aria-invalid'); });
+      if (bad.length) {
+        bad.forEach(function (el) { el.setAttribute('aria-invalid', 'true'); });
+        var first = ((f.querySelector('label[for="' + bad[0].id + '"]') || {}).textContent || '').replace(/[?:]$/, '');
+        note.className = 'form-note err';
+        note.textContent = bad.length === 1 ? 'Please fill in "' + first + '".'
+          : 'Please fill in the ' + bad.length + ' highlighted fields, starting with "' + first + '".';
+        bad[0].focus(); return;
+      }
+      if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())) { note.className = 'form-note err'; note.textContent = 'That email address looks incomplete. Try name@company.com.'; email.setAttribute('aria-invalid', 'true'); email.focus(); return; }
       var endpoint = f.getAttribute('data-endpoint');
       if (!endpoint) { note.className = 'form-note'; note.textContent = f.getAttribute('data-unset') || 'This form is not connected yet. Add a form endpoint in src/config.json before launch.'; return; }
       var btn = $('button[type=submit]', f); btn.disabled = true;
