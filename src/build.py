@@ -28,12 +28,18 @@ import os
 import re
 import shutil
 import sys
+import hashlib
 
 SRC = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(SRC)
 CFG = json.load(open(os.path.join(SRC, 'config.json')))
 LOGO = json.load(open(os.path.join(SRC, 'assets', 'logo-paths.json')))
 SITE = CFG['site_url'].rstrip('/')
+
+def asset_url(name):
+    """styles.css -> styles.css?v=<hash of its contents>, so a changed file is never served from a stale cache."""
+    data = open(os.path.join(SRC, 'assets', name), 'rb').read()
+    return f'{name}?v={hashlib.sha1(data).hexdigest()[:10]}'
 
 ICONS = {
     'people': '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14.8c1.7.8 2.8 2.5 3 5.2"/>',
@@ -301,8 +307,10 @@ def render(meta, preview):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght,ROND@8..144,400..700,0..100&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="{asset_url('styles.css')}">
 <script type="application/ld+json">{schema(meta, crumbs_ld)}</script>'''
+    page_scripts = ''.join(f'\n<script src="{asset_url(n.strip())}" defer></script>'
+                           for n in meta.get('scripts', '').split(',') if n.strip())
     page = f'''{SPRITE}
 <a class="skip" href="#main">Skip to content</a>
 {header(meta.get('nav', ''), preview)}
@@ -311,7 +319,7 @@ def render(meta, preview):
 {body}
 </main>
 {footer()}
-<script src="main.js" defer></script>'''
+<script src="{asset_url('main.js')}" defer></script>{page_scripts}'''
     page = expand(page, preview)
     head = expand(head, preview)
     if preview and meta['slug'] == 'index':
@@ -331,8 +339,9 @@ def build(out, preview=False):
         open(os.path.join(out, meta['slug'] + '.html'), 'w', encoding='utf-8').write(render(meta, preview))
     for f in os.listdir(os.path.join(SRC, 'static')):
         shutil.copy(os.path.join(SRC, 'static', f), out)
-    for f in ('styles.css', 'main.js'):
-        shutil.copy(os.path.join(SRC, 'assets', f), out)
+    for f in os.listdir(os.path.join(SRC, 'assets')):
+        if f.endswith(('.css', '.js')):
+            shutil.copy(os.path.join(SRC, 'assets', f), out)
     # web manifest with relative icon paths so the site works from a sub-folder too
     json.dump({'name': 'WorkDesk', 'short_name': 'WorkDesk', 'start_url': './', 'display': 'standalone',
                'theme_color': '#16123A', 'background_color': '#16123A',

@@ -253,33 +253,6 @@
     builder.addEventListener('input', upd2); upd2();
   }
 
-  /* ---------- affiliate commission calculator ---------- */
-  var calc = $('#aff-calc');
-  if (calc) {
-    var amt = $('#aff-amount'), term = 'annual';
-    var parse = function () { return parseInt(amt.value.replace(/[^0-9]/g, ''), 10) || 0; };
-    var fmt = function (n) { return 'Rs ' + Math.round(n).toLocaleString('en-US'); };
-    var annual = function () { return term === 'annual'; };
-    var upd = function () {
-      $('#aff-out').textContent = fmt(parse() * 0.2);
-      $('#aff-term').textContent = annual() ? '12 months' : '1 month';
-      $('#aff-label').textContent = annual() ? 'What the customer pays for the year (Rs)' : 'What the customer pays per month (Rs)';
-      $('#aff-note').textContent = annual() ? "Paid once, on the customer's first annual payment."
-        : "Paid once, on the customer's first monthly payment. Renewals aren't included.";
-    };
-    amt.addEventListener('input', function () { var v = parse(); amt.value = v ? v.toLocaleString('en-US') : ''; upd(); });
-    $$('[data-term]', calc).forEach(function (b) {
-      b.addEventListener('click', function () {
-        term = b.getAttribute('data-term');
-        $$('[data-term]', calc).forEach(function (x) { x.setAttribute('aria-checked', String(x === b)); });
-        if (term === 'monthly' && parse() === 600000) amt.value = '50,000';
-        if (term === 'annual' && parse() === 50000) amt.value = '600,000';
-        upd();
-      });
-    });
-    upd();
-  }
-
   /* ---------- forms: post to the configured endpoint, or explain that none is set ---------- */
   $$('form[data-form]').forEach(function (f) {
     var note = $('.form-note', f);
