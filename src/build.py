@@ -204,7 +204,7 @@ def footer():
         <li><a href="hr-reports-analytics.html">HR reports</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
       <div><h2 class="foot-h">Company</h2><ul>
         <li><a href="about.html">About us</a></li><li><a href="solutions.html">Solutions</a></li><li><a href="careers.html">Careers</a></li>
-        <li><a href="partners.html">Partners</a></li><li><a href="contact.html">Contact</a></li><li><a href="demo.html">Book a demo</a></li></ul></div>
+        <li><a href="partners.html">Partners</a></li><li><a href="affiliate.html">Affiliate program</a></li><li><a href="contact.html">Contact</a></li><li><a href="demo.html">Book a demo</a></li></ul></div>
       <div><h2 class="foot-h">Resources</h2><ul>
         <li><a href="blog.html">Blog</a></li><li><a href="help.html">Help centre</a></li><li><a href="faq.html">FAQ</a></li>
         <li><a href="security.html">Security</a></li></ul></div>
@@ -350,7 +350,7 @@ def build(out, preview=False):
     llms = ['# WorkDesk', '', '> WorkDesk is HR, payroll and work management software for growing teams in Pakistan: employee records, attendance and shifts, leave, payroll with deductions and fines, tasks and projects, performance scorecards and reports.', '']
     for title, slugs in [('Product', ['features', 'people-management', 'attendance-leave-management', 'payroll-software', 'task-project-management', 'performance-scorecards', 'hr-reports-analytics', 'solutions', 'pricing']),
                          ('Guides', [m['slug'] for m in pages if m.get('type') == 'BlogPosting']),
-                         ('Company', ['about', 'security', 'faq', 'contact'])]:
+                         ('Company', ['about', 'partners', 'affiliate', 'security', 'faq', 'contact'])]:
         llms.append(f'## {title}')
         for s in slugs:
             m = next((p for p in pages if p['slug'] == s), None)

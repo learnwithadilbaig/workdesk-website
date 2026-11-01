@@ -20,6 +20,8 @@
 
 ## Company
 - [We build software for the people who keep companies running](https://learnwithadilbaig.github.io/workdesk-website/about.html): WorkDesk builds HR, payroll and work management software for growing businesses in Pakistan. What we believe, how we work and why the logo is two ticks.
+- [Help more companies get their HR done](https://learnwithadilbaig.github.io/workdesk-website/partners.html): HR consultants, accounting firms and software resellers can partner with WorkDesk to help companies in Pakistan move HR and payroll off spreadsheets.
+- [Earn 20% for every business you bring to WorkDesk](https://learnwithadilbaig.github.io/workdesk-website/affiliate.html): Refer businesses to WorkDesk HR and payroll software and earn a flat 20% of what they pay for their first plan. Free for consultants, accountants and resellers.
 - [How we look after your people's data](https://learnwithadilbaig.github.io/workdesk-website/security.html): How WorkDesk protects salary and personal data: role-based access, encrypted connections, activity history, backups and your right to export your data.
 - [Frequently asked questions](https://learnwithadilbaig.github.io/workdesk-website/faq.html): Answers about WorkDesk HR and payroll software: modules, payroll with fines and deductions, attendance, mobile app, data security, pricing and getting started.
 - [Talk to the WorkDesk team](https://learnwithadilbaig.github.io/workdesk-website/contact.html): Questions about WorkDesk HR and payroll software? Contact our team for sales, support or partnerships. We reply on working days.
