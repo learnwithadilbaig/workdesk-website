@@ -65,6 +65,7 @@ Settings in `src/config.json`:
 - [ ] `app_login_url`, `app_signup_url`: "Log in" and "Sign up" then go straight to the app
 - [ ] `form_endpoint`: a form service URL (Formspree, Basin, Getform, or your own API). Until it's set, forms show a "not connected yet" note instead of sending.
 - [ ] `social`: links to your LinkedIn, Facebook, Instagram, X and YouTube pages
+- [x] `gtm_id`: Google Tag Manager container (set to GTM-PBFVZPXM). The build adds the install code to every page. See `analytics/README.md` for the container to import, the pixel and Clarity IDs, and the GA4 setup.
 
 Content to check:
 

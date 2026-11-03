@@ -256,6 +256,10 @@
   /* ---------- forms: post to the configured endpoint, or explain that none is set ---------- */
   $$('form[data-form]').forEach(function (f) {
     var note = $('.form-note', f);
+    /* analytics (see track.js). Lead forms carry a hidden "form" field; the log-in form has none and is never counted as a lead. */
+    var formName = (f.querySelector('input[name=form]') || {}).value;
+    var track = function (ev, p) { if (formName && window.wdTrack) { p.form_name = formName; window.wdTrack(ev, p); } };
+    var pick = function (n) { var el = f.querySelector('select[name="' + n + '"]'); return el ? el.value : ''; }; /* fixed options only, never typed answers */
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var bad = $$('[required]', f).filter(function (el) { return !el.value.trim(); });
@@ -267,18 +271,20 @@
         note.className = 'form-note err';
         note.textContent = bad.length === 1 ? 'Please fill in "' + first + '".'
           : 'Please fill in the ' + bad.length + ' highlighted fields, starting with "' + first + '".';
-        bad[0].focus(); return;
+        bad[0].focus(); track('lead_form_error', { error_type: 'missing_fields', error_count: bad.length }); return;
       }
-      if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())) { note.className = 'form-note err'; note.textContent = 'That email address looks incomplete. Try name@company.com.'; email.setAttribute('aria-invalid', 'true'); email.focus(); return; }
+      if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())) { note.className = 'form-note err'; note.textContent = 'That email address looks incomplete. Try name@company.com.'; email.setAttribute('aria-invalid', 'true'); email.focus(); track('lead_form_error', { error_type: 'invalid_email', error_count: 1 }); return; }
       var endpoint = f.getAttribute('data-endpoint');
-      if (!endpoint) { note.className = 'form-note'; note.textContent = f.getAttribute('data-unset') || 'This form is not connected yet. Add a form endpoint in src/config.json before launch.'; return; }
+      if (!endpoint) { note.className = 'form-note'; note.textContent = f.getAttribute('data-unset') || 'This form is not connected yet. Add a form endpoint in src/config.json before launch.'; track('lead_form_error', { error_type: 'not_connected', error_count: 0 }); return; }
       var btn = $('button[type=submit]', f); btn.disabled = true;
       fetch(endpoint, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
         .then(function (r) {
           if (!r.ok) throw new Error();
+          /* the lead is counted only here, after the server confirms it received the form */
+          track('generate_lead', { team_size: pick('team_size'), interest: pick('interest'), topic: pick('topic'), applicant_type: pick('type') });
           note.className = 'form-note ok'; note.textContent = f.getAttribute('data-ok') || 'Thanks. We will be in touch soon.'; f.reset();
         })
-        .catch(function () { note.className = 'form-note err'; note.textContent = 'Something went wrong sending the form. Please email us instead.'; })
+        .catch(function () { note.className = 'form-note err'; note.textContent = 'Something went wrong sending the form. Please email us instead.'; track('lead_form_error', { error_type: 'send_failed', error_count: 0 }); })
         .then(function () { btn.disabled = false; });
     });
   });

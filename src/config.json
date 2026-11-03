@@ -11,5 +11,6 @@
   "app_login_url": "",
   "app_signup_url": "",
   "form_endpoint": "",
+  "gtm_id": "GTM-PBFVZPXM",
   "social": { "linkedin": "", "facebook": "", "instagram": "", "x": "", "youtube": "" }
 }

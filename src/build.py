@@ -41,6 +41,37 @@ def asset_url(name):
     data = open(os.path.join(SRC, 'assets', name), 'rb').read()
     return f'{name}?v={hashlib.sha1(data).hexdigest()[:10]}'
 
+# ---------- analytics: Google Tag Manager + page data for GA4 content groups ----------
+GTM_ID = CFG.get('gtm_id', '').strip()
+if GTM_ID and not re.fullmatch(r'GTM-[A-Z0-9]{4,12}', GTM_ID):
+    sys.exit(f'config.json gtm_id "{GTM_ID}" is not a Tag Manager ID (it should look like GTM-ABC1234)')
+
+CONTENT_GROUPS = {
+    'index': 'Home', 'features': 'Product', 'people-management': 'Product', 'attendance-leave-management': 'Product',
+    'payroll-software': 'Product', 'task-project-management': 'Product', 'performance-scorecards': 'Product',
+    'hr-reports-analytics': 'Product', 'solutions': 'Solutions', 'pricing': 'Pricing',
+    'demo': 'Conversion', 'contact': 'Conversion', 'signup': 'Conversion', 'login': 'Conversion',
+    'about': 'Company', 'careers': 'Company', 'partners': 'Company', 'affiliate': 'Company',
+    'blog': 'Blog', 'help': 'Support', 'faq': 'Support', 'security': 'Support',
+    'privacy': 'Legal', 'terms': 'Legal', '404': 'Error',
+}
+
+def tracking_head(meta, preview):
+    """Page data first, then the GTM snippet, as high in <head> as possible. Nothing loads in the preview build."""
+    group = 'Blog' if meta['slug'].startswith('blog-') else CONTENT_GROUPS.get(meta['slug'], 'Other')
+    app = json.dumps({'login': CFG['app_login_url'] or 'login.html', 'signup': CFG['app_signup_url'] or 'signup.html'})
+    out = ('<script>window.dataLayer=window.dataLayer||[];'
+           f'window.dataLayer.push({{content_group:{json.dumps(group)}}});window.WD_APP={app};</script>')
+    if GTM_ID and not preview:
+        # the install code from the WorkDesk GTM container, exactly as Tag Manager gives it
+        out += (f'\n<!-- Google Tag Manager -->\n<script async src="https://www.googletagmanager.com/gtm.js?id={GTM_ID}"></script>\n'
+                "<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n"
+                "  gtag('js', new Date());\n</script>\n<!-- End Google Tag Manager -->")
+    return out
+
+def tracking_body(preview):
+    return ''  # this container's install code has no <noscript> part
+
 ICONS = {
     'people': '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.6 3.2-5.5 6.5-5.5s5.9 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14.8c1.7.8 2.8 2.5 3 5.2"/>',
     'clock': '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
@@ -286,7 +317,8 @@ def render(meta, preview):
         body = body.replace('{{reading}}', str(meta['reading']))
     noindex = meta.get('noindex') == 'yes'
     url = url_of(meta['slug'])
-    head = f'''<title>{html.escape(meta['title'])}</title>
+    head = f'''{tracking_head(meta, preview)}
+<title>{html.escape(meta['title'])}</title>
 <meta name="description" content="{html.escape(meta['description'])}">
 <link rel="canonical" href="{url}">
 {'<meta name="robots" content="noindex, follow">' if noindex else '<meta name="robots" content="index, follow, max-image-preview:large">'}
@@ -311,7 +343,7 @@ def render(meta, preview):
 <script type="application/ld+json">{schema(meta, crumbs_ld)}</script>'''
     page_scripts = ''.join(f'\n<script src="{asset_url(n.strip())}" defer></script>'
                            for n in meta.get('scripts', '').split(',') if n.strip())
-    page = f'''{SPRITE}
+    page = f'''{tracking_body(preview)}{SPRITE}
 <a class="skip" href="#main">Skip to content</a>
 {header(meta.get('nav', ''), preview)}
 <main id="main" class="page-{meta['slug']}">
@@ -319,6 +351,7 @@ def render(meta, preview):
 {body}
 </main>
 {footer()}
+<script src="{asset_url('track.js')}" defer></script>
 <script src="{asset_url('main.js')}" defer></script>{page_scripts}'''
     page = expand(page, preview)
     head = expand(head, preview)
