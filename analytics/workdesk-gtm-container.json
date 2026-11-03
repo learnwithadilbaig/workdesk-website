@@ -1,13 +1,13 @@
 {
   "exportFormatVersion": 2,
-  "exportTime": "2026-11-03 10:23:48",
+  "exportTime": "2026-11-03 10:34:15",
   "containerVersion": {
     "path": "accounts/0/containers/0/versions/0",
     "accountId": "0",
     "containerId": "0",
     "containerVersionId": "0",
     "name": "WorkDesk website tracking v2",
-    "description": "GA4, Meta Pixel, TikTok Pixel, Google Ads and Microsoft Clarity for the WorkDesk website: real-traffic filter, consent mode v2 defaults, internal traffic kept out, page content groups, leads counted only on confirmed form submission, every CTA, menu, tab, FAQ, calculator and scroll depth.",
+    "description": "GA4, Meta Pixel, TikTok Pixel, Google Ads and Microsoft Clarity for the WorkDesk website. Real-traffic filter, consent mode v2 defaults, internal traffic kept out, page content groups, leads counted only on confirmed form submission, every CTA, menu, tab, FAQ, calculator and scroll depth.",
     "container": {
       "path": "accounts/0/containers/0",
       "accountId": "0",
@@ -17,7 +17,7 @@
       "usageContext": [
         "WEB"
       ],
-      "fingerprint": "1793701428647",
+      "fingerprint": "1793702055636",
       "tagManagerUrl": "https://tagmanager.google.com/",
       "features": {
         "supportUserPermissions": true,
@@ -66,14 +66,14 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "1",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Runs before everything else. If you add a cookie banner later, replace this with the banner's own GTM template."
       },
       {
         "accountId": "0",
         "containerId": "0",
         "tagId": "2",
-        "name": "Util - Mark internal visitors (?wd_internal=1)",
+        "name": "Util - Mark internal visitors (wd_internal cookie)",
         "type": "html",
         "parameter": [
           {
@@ -98,7 +98,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "1",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Sets a first-party cookie so your own visits carry traffic_type=internal and can be filtered out in GA4."
       },
       {
@@ -161,7 +161,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "1",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Sends the page_view (once per page load) and the content group: Home, Product, Solutions, Pricing, Conversion, Company, Blog, Support, Legal, Error."
       },
       {
@@ -279,7 +279,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "KEY EVENT. Fires only after the form server confirms it received the form (demo, contact, partner, affiliate, careers, signup). Mark generate_lead as a key event in GA4."
       },
       {
@@ -337,7 +337,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "First time a visitor types in or clicks into a lead form on this page view. Once per form per page."
       },
       {
@@ -425,7 +425,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "A submit that did not become a lead. error_type: missing_fields, invalid_email, not_connected (no form endpoint set on the site), send_failed (server error)."
       },
       {
@@ -528,7 +528,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Every button and text link CTA. cta_type: book_demo, sign_up, log_in, pricing, contact, affiliate_apply, feature_page and more. cta_location: header, hero, cta_band, pricing_builder, footer or the section name."
       },
       {
@@ -616,7 +616,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Menu, footer, breadcrumb, logo and in-article links. nav_area: header, header_menu, mobile_menu, footer, breadcrumb, content."
       },
       {
@@ -689,7 +689,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Email, phone and WhatsApp links. contact_method: email, phone, whatsapp."
       },
       {
@@ -777,7 +777,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Get my quote on the pricing page, with the modules and headcount the visitor picked."
       },
       {
@@ -865,7 +865,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Pricing builder settled for 1.5 s after a change (no event per slider tick)."
       },
       {
@@ -968,7 +968,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Affiliate commission calculator settled for 1.5 s after a change."
       },
       {
@@ -1041,7 +1041,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "A question opened on the FAQ, help, pricing or feature pages. Closing sends nothing."
       },
       {
@@ -1114,7 +1114,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Role tabs (Solutions), profile tabs (People), plan switch (affiliate calculator) and chart filters (Reports)."
       },
       {
@@ -1187,7 +1187,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Clicks on the live product demos on the site: leave_approval, report_export."
       },
       {
@@ -1245,7 +1245,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Header mega menus and the mobile menu opened."
       },
       {
@@ -1303,7 +1303,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "A visitor reached the 404 page. Use it to find and fix broken links."
       },
       {
@@ -1361,14 +1361,14 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "2",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Scroll depth 25, 50, 75%, once each per page, only after a real scroll. GA4 enhanced measurement adds \"scroll\" at 90%."
       },
       {
         "accountId": "0",
         "containerId": "0",
         "tagId": "19",
-        "name": "Meta - Pixel base + PageView",
+        "name": "Meta - Pixel base and PageView",
         "type": "html",
         "parameter": [
           {
@@ -1402,7 +1402,7 @@
           }
         },
         "parentFolderId": "5",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "One PageView per page load, real visitors only."
       },
       {
@@ -1443,7 +1443,7 @@
           }
         },
         "parentFolderId": "5",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Demo, contact and signup forms accepted by the server. Optimise lead campaigns for this."
       },
       {
@@ -1484,7 +1484,7 @@
           }
         },
         "parentFolderId": "5",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Partner and affiliate applications, kept separate so customer campaigns are not optimised for partners."
       },
       {
@@ -1525,7 +1525,7 @@
           }
         },
         "parentFolderId": "5",
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -1565,14 +1565,14 @@
           }
         },
         "parentFolderId": "5",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Get my quote on the pricing page."
       },
       {
         "accountId": "0",
         "containerId": "0",
         "tagId": "24",
-        "name": "TikTok - Pixel base + page",
+        "name": "TikTok - Pixel base and page",
         "type": "html",
         "parameter": [
           {
@@ -1606,7 +1606,7 @@
           }
         },
         "parentFolderId": "6",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "One page event per page load, real visitors only."
       },
       {
@@ -1647,7 +1647,7 @@
           }
         },
         "parentFolderId": "6",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Demo, contact and signup forms accepted by the server. Optimise lead campaigns for this."
       },
       {
@@ -1688,7 +1688,7 @@
           }
         },
         "parentFolderId": "6",
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -1728,7 +1728,7 @@
           }
         },
         "parentFolderId": "6",
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -1754,7 +1754,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "7",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Builds remarketing audiences from real visitors. Fires only once \"Const - Google Ads ID\" is filled in."
       },
       {
@@ -1791,7 +1791,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "7",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Stores the ad click ID so a lead can be credited to the ad that brought the visitor."
       },
       {
@@ -1838,7 +1838,7 @@
           "consentStatus": "NOT_SET"
         },
         "parentFolderId": "7",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Demo, contact and signup forms accepted by the server. Fires only once both Google Ads constants are filled in."
       },
       {
@@ -1879,7 +1879,7 @@
           }
         },
         "parentFolderId": "8",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Heatmaps and session recordings of real visitors, tagged with the page content group."
       },
       {
@@ -1920,7 +1920,7 @@
           }
         },
         "parentFolderId": "8",
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "\"upgrade\" keeps every recording that ends in a lead."
       }
     ],
@@ -1949,7 +1949,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -1992,7 +1992,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2035,7 +2035,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2078,7 +2078,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2121,7 +2121,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2164,7 +2164,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2207,7 +2207,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2250,7 +2250,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2293,7 +2293,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2336,7 +2336,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2379,7 +2379,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2422,7 +2422,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2465,7 +2465,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2508,7 +2508,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2551,7 +2551,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2594,7 +2594,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2620,7 +2620,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2678,7 +2678,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2736,7 +2736,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2779,7 +2779,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2822,7 +2822,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2865,7 +2865,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2906,7 +2906,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -2994,7 +2994,7 @@
             ]
           }
         ],
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       }
     ],
     "variable": [
@@ -3013,7 +3013,7 @@
         ],
         "parentFolderId": "1",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "REPLACE with your GA4 Measurement ID (GA4 Admin > Data streams > your web stream)."
       },
       {
@@ -3031,7 +3031,7 @@
         ],
         "parentFolderId": "1",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Set to your live domain so test copies (Vercel, Hostinger temporary domain, GitHub Pages) never count. Example: ^(www\\.)?workdesk\\.pk$"
       },
       {
@@ -3054,7 +3054,7 @@
         ],
         "parentFolderId": "1",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3071,7 +3071,7 @@
         ],
         "parentFolderId": "1",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Every GA4 tag fires only when this is true. Edit the hostname constant rather than this code."
       },
       {
@@ -3089,7 +3089,7 @@
         ],
         "parentFolderId": "1",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3116,7 +3116,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3143,7 +3143,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "demo, contact, partner, affiliate, careers, signup"
       },
       {
@@ -3171,7 +3171,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "demo form team-size option"
       },
       {
@@ -3199,7 +3199,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "demo form module option"
       },
       {
@@ -3227,7 +3227,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "contact form topic option"
       },
       {
@@ -3255,7 +3255,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "partner/affiliate type option"
       },
       {
@@ -3283,7 +3283,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3310,7 +3310,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3337,7 +3337,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3364,7 +3364,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3391,7 +3391,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3418,7 +3418,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3445,7 +3445,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3472,7 +3472,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3499,7 +3499,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3526,7 +3526,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3553,7 +3553,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3580,7 +3580,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3607,7 +3607,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3634,7 +3634,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3661,7 +3661,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3688,7 +3688,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3715,7 +3715,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3742,7 +3742,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3769,7 +3769,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3796,7 +3796,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3823,7 +3823,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3850,7 +3850,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3877,7 +3877,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3904,7 +3904,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3931,7 +3931,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3958,7 +3958,7 @@
         ],
         "parentFolderId": "3",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -3975,7 +3975,7 @@
         ],
         "parentFolderId": "4",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Meta Events Manager > Data sources > your pixel > Settings. Numbers only, e.g. 1234567890123456."
       },
       {
@@ -3993,7 +3993,7 @@
         ],
         "parentFolderId": "4",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "TikTok Ads Manager > Tools > Events > Web events > your pixel. Looks like CABCD1234EFGH5678IJK."
       },
       {
@@ -4011,7 +4011,7 @@
         ],
         "parentFolderId": "4",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "clarity.microsoft.com > your project > Settings > Overview. About 10 lowercase letters and numbers."
       },
       {
@@ -4029,7 +4029,7 @@
         ],
         "parentFolderId": "4",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Google Ads > Goals > Conversions > your lead conversion > Tag setup > Use Google Tag Manager: the Conversion ID, numbers only (no \"AW-\")."
       },
       {
@@ -4047,7 +4047,7 @@
         ],
         "parentFolderId": "4",
         "formatValue": {},
-        "fingerprint": "1793701428647",
+        "fingerprint": "1793702055636",
         "notes": "Same screen as the Conversion ID: the Conversion label, e.g. AbC-D_efG-h12_34-567."
       },
       {
@@ -4065,7 +4065,7 @@
         ],
         "parentFolderId": "4",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
@@ -4082,7 +4082,7 @@
         ],
         "parentFolderId": "4",
         "formatValue": {},
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       }
     ],
     "folder": [
@@ -4090,57 +4090,57 @@
         "accountId": "0",
         "containerId": "0",
         "folderId": "1",
-        "name": "1 Setup: consent, internal traffic, GA4 base",
-        "fingerprint": "1793701428647"
+        "name": "1 Setup - consent, internal traffic, GA4 base",
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
         "containerId": "0",
         "folderId": "2",
         "name": "2 GA4 events",
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
         "containerId": "0",
         "folderId": "3",
         "name": "3 Data layer variables",
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
         "containerId": "0",
         "folderId": "4",
-        "name": "4 Ads & Clarity: IDs, shared triggers",
-        "fingerprint": "1793701428647"
+        "name": "4 Ads and Clarity - IDs, shared triggers",
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
         "containerId": "0",
         "folderId": "5",
         "name": "5 Meta Pixel",
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
         "containerId": "0",
         "folderId": "6",
         "name": "6 TikTok Pixel",
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
         "containerId": "0",
         "folderId": "7",
         "name": "7 Google Ads",
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       },
       {
         "accountId": "0",
         "containerId": "0",
         "folderId": "8",
         "name": "8 Microsoft Clarity",
-        "fingerprint": "1793701428647"
+        "fingerprint": "1793702055636"
       }
     ],
     "builtInVariable": [
@@ -4175,7 +4175,7 @@
         "name": "Event"
       }
     ],
-    "fingerprint": "1793701428647",
+    "fingerprint": "1793702055636",
     "tagManagerUrl": "https://tagmanager.google.com/"
   }
 }

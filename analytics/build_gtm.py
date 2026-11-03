@@ -56,7 +56,7 @@ def base(**kw):
 folders, tags, triggers, variables = [], [], [], []
 def folder(name):
     f = base(folderId=nid('folder'), name=name); folders.append(f); return f['folderId']
-F_SETUP = folder('1 Setup: consent, internal traffic, GA4 base')
+F_SETUP = folder('1 Setup - consent, internal traffic, GA4 base')
 F_EVENTS = folder('2 GA4 events')
 F_DLV = folder('3 Data layer variables')
 
@@ -151,7 +151,7 @@ INTERNAL_HTML = '''<script>
       : 'wd_internal=; path=/; max-age=0; SameSite=Lax' + secure;
   })();
 </script>'''
-tag('Util - Mark internal visitors (?wd_internal=1)', 'html', [T('html', INTERNAL_HTML), BOOL('supportDocumentWrite', False)], [CONSENT_INIT], F_SETUP,
+tag('Util - Mark internal visitors (wd_internal cookie)', 'html', [T('html', INTERNAL_HTML), BOOL('supportDocumentWrite', False)], [CONSENT_INIT], F_SETUP,
     notes='Sets a first-party cookie so your own visits carry traffic_type=internal and can be filtered out in GA4.')
 
 tag('GA4 - Google tag', 'googtag', [
@@ -175,7 +175,7 @@ for ev, (params, notes) in EVENTS.items():
 # ================================================================ ad platforms + Clarity
 # Each platform stays silent until its ID is pasted into its constant (the code checks the ID's format),
 # so nothing is ever sent with a placeholder. None of them get your team's visits or careers applications.
-F_SHARED = folder('4 Ads & Clarity: IDs, shared triggers')
+F_SHARED = folder('4 Ads and Clarity - IDs, shared triggers')
 F_META, F_TT, F_GADS, F_CLAR = folder('5 Meta Pixel'), folder('6 TikTok Pixel'), folder('7 Google Ads'), folder('8 Microsoft Clarity')
 
 variable('Const - Meta Pixel ID', 'c', [T('value', 'PASTE META PIXEL ID')], fid=F_SHARED,
@@ -222,7 +222,7 @@ def html(name, code, firing, fid, needs, notes=''):
     return tag(name, 'html', [T('html', code), BOOL('supportDocumentWrite', False)], [firing], fid, notes=notes, needs=needs)
 
 # ---- Meta Pixel (needs ad_storage consent)
-html('Meta - Pixel base + PageView', '''<script>
+html('Meta - Pixel base and PageView', '''<script>
   // Meta Pixel base code. Does nothing until "Const - Meta Pixel ID" holds a real ID.
   (function () {
     var id = String({{Const - Meta Pixel ID}});
@@ -252,7 +252,7 @@ html('Meta - CustomizeProduct (quote)', '''<script>
 </script>''', QUOTE, F_META, ['ad_storage'], 'Get my quote on the pricing page.')
 
 # ---- TikTok Pixel (needs ad_storage consent)
-html('TikTok - Pixel base + page', '''<script>
+html('TikTok - Pixel base and page', '''<script>
   // TikTok Pixel base code. Does nothing until "Const - TikTok Pixel ID" holds a real ID.
   (function () {
     var id = String({{Const - TikTok Pixel ID}});
@@ -317,7 +317,7 @@ container = {
     'containerVersion': {
         'path': f'accounts/{ACC}/containers/{CON}/versions/0', 'accountId': ACC, 'containerId': CON, 'containerVersionId': '0',
         'name': 'WorkDesk website tracking v2',
-        'description': 'GA4, Meta Pixel, TikTok Pixel, Google Ads and Microsoft Clarity for the WorkDesk website: real-traffic filter, consent mode v2 defaults, internal traffic kept out, page content groups, leads counted only on confirmed form submission, every CTA, menu, tab, FAQ, calculator and scroll depth.',
+        'description': 'GA4, Meta Pixel, TikTok Pixel, Google Ads and Microsoft Clarity for the WorkDesk website. Real-traffic filter, consent mode v2 defaults, internal traffic kept out, page content groups, leads counted only on confirmed form submission, every CTA, menu, tab, FAQ, calculator and scroll depth.',
         'container': {
             'path': f'accounts/{ACC}/containers/{CON}', 'accountId': ACC, 'containerId': CON, 'name': 'WorkDesk website',
             'publicId': 'GTM-XXXXXXX', 'usageContext': ['WEB'], 'fingerprint': FP, 'tagManagerUrl': 'https://tagmanager.google.com/',
@@ -337,6 +337,11 @@ names = {v['name'] for v in variables} | {n for _, n in BUILTINS} | {'_event'}
 refs = set(re.findall(r'\{\{([^}]+)\}\}', json.dumps(container)))
 missing = refs - names
 assert not missing, f'undefined variables: {missing}'
+# GTM's importer rejects some characters in names (":" for one), so names stick to a plain, safe set.
+SAFE = re.compile(r'^[A-Za-z0-9 ._,()\-]+$')
+unsafe = [x['name'] for k in ('tag', 'trigger', 'variable', 'folder') for x in container['containerVersion'][k] if not SAFE.match(x['name'])]
+unsafe += [n for n in (container['containerVersion']['name'], container['containerVersion']['container']['name']) if not SAFE.match(n)]
+assert not unsafe, f'names with characters GTM may reject: {unsafe}'
 for kind, key in [('tag', 'tagId'), ('trigger', 'triggerId'), ('variable', 'variableId')]:
     ids = [x[key] for x in container['containerVersion'][kind]]
     assert len(ids) == len(set(ids)), f'duplicate {kind} ids'

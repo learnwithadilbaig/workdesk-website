@@ -38,8 +38,8 @@ When you create each pixel or project, skip the platform's own install steps (ba
    - If *Initialization* or *Container Loaded* is missing, the install code isn't starting GTM properly. Switch `src/build.py` back to Google's classic install snippet. It's a two-line change.
 3. On *Initialization* you should see these tags fire:
    - `GA4 - Google tag`
-   - `Meta - Pixel base + PageView`
-   - `TikTok - Pixel base + page`
+   - `Meta - Pixel base and PageView`
+   - `TikTok - Pixel base and page`
    - `Google Ads - Google tag (audiences)` and `Conversion Linker`
    - `Clarity - Load`
 4. Click a button: `GA4 - cta_click` fires.
